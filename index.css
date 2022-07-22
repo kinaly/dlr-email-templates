@@ -1,0 +1,18 @@
+/* Insert style for index.html */
+html {
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+main {
+    width: 96%;
+    max-width: 680px;
+
+    margin: 1em auto;
+}
