@@ -1,0 +1,10 @@
+{% extends "templates/common-email-base.html" %}
+
+{% block title %} Commented email template base reference {% endblock %}
+
+{% block shortSubject %}Email short subject{% endblock %}
+
+{% block content %}
+  {% include "templates/partials/email-reference.html" %}
+  {% include "templates/partials/email-footer-dlr.html" %}
+{% endblock %}
