@@ -1,0 +1,27 @@
+{
+  "name": "dlr-email-templates",
+  "version": "1.0.0",
+  "description": "HTML markup reference for DLR emails",
+  "main": "./dist/index.html",
+  "scripts": {
+    "clean": "del-cli _dist",
+    "build": "npm run clean && node build-scripts/render-html.js && cpy ./index.css ../_dist --cwd=_src && cpy ./email-assets ../_dist --cwd=_src",
+    "serve": "npm run build && wds --node-resolve --app-index _dist/index.html --open --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kinaly/dlr-email-templates.git"
+  },
+  "author": "Kinaly Venevongsos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kinaly/dlr-email-templates/issues"
+  },
+  "homepage": "https://github.com/kinaly/dlr-email-templates#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.32",
+    "cpy-cli": "^4.1.0",
+    "del-cli": "^5.0.0",
+    "nunjucks": "^3.2.3"
+  }
+}
