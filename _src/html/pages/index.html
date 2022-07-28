@@ -15,18 +15,24 @@
             <li><a href="emails/reference-interxion.html">Base template (Interxion version)</a></li>
             <li><a href="emails/reference-dlr.html">Base template (Digital Realty version)</a></li>
         </ul>
-        
+
+        {% set emails = ["new-user", "refresh-registration-link"] %}
+
         <section>
           <h2>Interxion version</h2>
           <ul>
-            <li><a href="emails/new-user-interxion.html">New User (en)</a></li>
+            {% for email in emails %}
+            <li><a href="emails/{{ email }}-interxion.html">{{ email | replace("-", " ") | title }} (en)</a></li>
+            {% endfor %}
           </ul>
         </section>
 
         <section>
           <h2>Digital Realty version</h2>
           <ul>
-            <li><a href="emails/new-user-dlr.html">New User (en)</a></li>
+            {% for email in emails %}
+            <li><a href="emails/{{ email }}-dlr.html">{{ email | replace("-", " ") | title }} (en)</a></li>
+            {% endfor %}
           </ul>
         </section>
     </main>
