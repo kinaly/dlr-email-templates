@@ -1,0 +1,10 @@
+{% extends "templates/template-main-email.html" %}
+
+{% block title %} Digital Realty Portal Registration Pending for {% raw %}{{ User Name }}{% endraw %} {% endblock %}
+
+{% block shortSubject %}Registration{% endblock %}
+
+{% block content %}
+  {% include "templates/emails/refresh-registration-link.html" %}
+  {% include "templates/partials/email-footer-interxion.html" %}
+{% endblock %}
