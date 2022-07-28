@@ -48,7 +48,10 @@
         <table role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-family: Arial, Helvetica, sans-serif; font-size:medium; max-width:600px; margin:0 auto;"><tr><td>
           <![endif]-->
           <div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-family: Arial, Helvetica, sans-serif; font-size:small; max-width:600px; margin:0 auto;">
-            
+            {% set subject %}
+              {% block shortSubject %}{% endblock %}
+            {% endset %}
+
             {% include "templates/partials/email-header.html" %}
             
             {% block content %}{% endblock %}
