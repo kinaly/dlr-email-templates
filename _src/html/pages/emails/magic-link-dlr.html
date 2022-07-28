@@ -1,0 +1,10 @@
+{% extends "templates/template-main-email.html" %}
+
+{% block title %} Digital Realty Portal Magic Link {% endblock %}
+
+{% block shortSubject %}Magic Link{% endblock %}
+
+{% block content %}
+  {% include "templates/emails/magic-link.html" %}
+  {% include "templates/partials/email-footer-dlr.html" %}
+{% endblock %}
