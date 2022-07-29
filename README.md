@@ -6,25 +6,23 @@ I am using Nunjucks to build the markup. It helps keeping the common elements in
 
 ## Installation
 
-To install the project
+### To install the project
 
 `npm install`
 
 
-To build the project
+### To build the project
 
 `npm run build`
 
 The templates will be located in `_dist/emails/`
 
-### Other bits
 
-To clean the _dist folder
+### To clean the _dist folder
 
 `npm run clean`
 
-
-To view in the browser
+### To view in the browser
 
 `npm run serve`
 
@@ -105,6 +103,7 @@ Add the name (without the extension) of the mail template file to the array in i
 The name should be the same as the file created in the templates emails folder.
 
 The array shoud look something like this:
+
 `{% set emails = ["new-user", "refresh-registration-link", "successful-registration", "password-reset", "password-reset-confirmation", "password-expiry-reminder", "password-expired", "magic-link", "one-time-code"] %}`
 
 ## Possible Improvements
