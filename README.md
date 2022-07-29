@@ -7,9 +7,12 @@ I am using Nunjucks to build the markup. It helps keeping the common elements in
 ## Installation
 
 To install the project
+
 `npm install`
 
+
 To build the project
+
 `npm run build`
 
 The templates will be located in `_dist/emails/`
@@ -17,9 +20,12 @@ The templates will be located in `_dist/emails/`
 ### Other bits
 
 To clean the _dist folder
+
 `npm run clean`
 
+
 To view in the browser
+
 `npm run serve`
 
 If you are copy-pasting the markup from the browser using `npm run serve`, please remove the lines related to webserver at the end
@@ -33,6 +39,7 @@ If you are copy-pasting the markup from the browser using `npm run serve`, pleas
 
 ### Add the body content of the mail
 When adding an e-mail, create a new file inside `_src/html/templates/emails`.
+
 The file should be named after what it does (ie. password-reset.html for the Password Reset email).
 
 This file should only contain the main content of the email and is placed inside a table.
@@ -57,10 +64,13 @@ Here is a short boilerplate:
 ```
 
 If you need to insert one of the mailgun variable to the email, you need to wrap it inside a Nunjucks raw tag:
+
 `{% raw %}{{ Mailgun Variable }}{% endraw %}`
 
 ### Create a file for each brand of the email
+
 Then you need to create a file for each brand of the email in `_src/html/pages/emails`.
+
 For example if you have created `password-reset.html` inside the emails template folder, then you should create 2 files named `password-reset-interxion.html` and `password-reset-dlr.html` respectively.
 
 These files should look like this:
@@ -81,13 +91,17 @@ These files should look like this:
 Each version is nearly identical except for the line including the footer:
 
 Interxion version
+
 `{% include "templates/partials/email-footer-interxion.html" %}`
 
 Digital Realty version
+
 `{% include "templates/partials/email-footer-dlr.html" %}`
 
 ### Add the newly created email to the list in index.html
+
 Add the name (without the extension) of the mail template file to the array in index.html (line 1).
+
 The name should be the same as the file created in the templates emails folder.
 
 The array shoud look something like this:
