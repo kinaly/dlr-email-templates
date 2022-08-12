@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "del-cli _dist",
     "build": "npm run clean && node build-scripts/render-html.js && cpy ./index.css ../_dist --cwd=_src && cpy ./email-assets ../_dist --cwd=_src",
-    "serve": "npm run build && wds --node-resolve --app-index _dist/index.html --open --watch"
+    "serve": "npm run build && wds --node-resolve --app-index _dist/index.html --open --watch",
+    "send-email": "node ./build-scripts/send-email.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "@web/dev-server": "^0.1.32",
     "cpy-cli": "^4.1.0",
     "del-cli": "^5.0.0",
+    "mailgun-js": "^0.22.0",
     "nunjucks": "^3.2.3"
   }
 }
