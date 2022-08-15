@@ -42,13 +42,12 @@
   </style>
   </head>
 
-  <body style="padding: 0; margin: 0;">
+  <body style="padding: 0; margin: 0; overflow-x: hidden; background-color: #F2F2F2;">
     <div style="background-color: #F2F2F2; min-height: 100%;">
       
-      <!--[if true]>
-        <table role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-family: Arial, Helvetica, sans-serif; font-size:medium; max-width:600px; margin:0 auto;"><tr><td>
-          <![endif]-->
-          <div role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-family: Arial, Helvetica, sans-serif; font-size:small; max-width:600px; margin:0 auto;">
+      <table role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-family: Arial, Helvetica, sans-serif; font-size: small; max-width:600px; margin:0 auto;">
+        <tr>
+          <td>
             {% set subject %}
               {% block shortSubject %}{% endblock %}
             {% endset %}
@@ -56,11 +55,9 @@
             {% include "templates/partials/email-header.html" %}
             
             {% block content %}{% endblock %}
-
-      </div>
-      <!--[if true]>
-      </td></tr></table>
-      <![endif]-->
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
   </html>
