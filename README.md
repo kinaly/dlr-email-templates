@@ -140,13 +140,14 @@ The array shoud look something like this:
 These templates have been tested in:
 * Outlook webmail in Firefox 103.0.2 - macOS 12.4
 * Outlook webmail in Edge 103.0.1264.62 - Windows 10
-* Outlook app - Windows 10
+* Outlook app - Windows 10 (OTP code lacks horizontal padding)
 * Apple Mail - iOS 15.5
 * Gmail webmail in Firefox 103.0.3 - macOS 12.4
 * Gmail app - iOS 15.5 (Works well in Light Mode but not in Dark Mode)
 
 The Gmail app in iOS (and possibly Android) will automatically change the colours in Dark Mode for you. These colours cannot be customised and make the text placed over the banner unreadable. If images are not downloaded, the logo will only be barely visible as it is white over a light background.
 
+The Outlook app client on Windows ignore margin and padding applied to certain elements. In the case of the OTP code, it will lack horizontal padding. We could use a trick to apply white spaces before and after the code to fake some padding but decided against it as this code is meant to be copied and paste. I didn't want to risk copying the white spaces.
 
 ## Possible Improvements
 
