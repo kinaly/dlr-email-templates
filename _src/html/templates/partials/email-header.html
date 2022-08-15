@@ -26,7 +26,7 @@
   {% set dlrLogoPath = assetsURL.dlrLogo.cdn %}
 {% endif %}
 
-<table class="container" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<table class="container" role="presentation" cellpadding="8" cellspacing="0" border="0" width="100%">
   <tr>
     <td style="background-color: #092241; color: #fff; background-image: url({{ bannerPath }}); background-size: 100%; background-position:center; background-repeat: no-repeat;">
       <!--[if gte mso 9]>
@@ -37,12 +37,12 @@
       <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td>
-              <img src="{{ dlrLogoPath }}" alt="Digital Realty" style="width: 33%; min-width: 113px; max-width: 149px; max-height: 36.05px; height: auto; padding: 8px 8px 0;">
+              <img src="{{ dlrLogoPath }}" alt="Digital Realty" width="149" height="28" style="width: 33%; min-width: 113px; max-width: 149px; max-height: 36.05px; height: auto;">
             </td>
           </tr>
           <tr>
             <td>
-              <h1 class="banner-heading" style="margin: 0; padding: 0 0 2em; font-size:1.25em; font-weight: normal; text-align: center; color: #fff;">{{ subject }}</h1>
+              <h1 class="banner-heading" style="margin: 0; padding: 0 0 1.5em; font-size:1.25em; font-weight: normal; text-align: center; color: #fff;">{{ subject }}</h1>
             </td>
           </tr>
         </table>
