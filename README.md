@@ -15,9 +15,6 @@ I am using Nunjucks to build the markup. It helps keeping the common elements in
 
 `npm run build`
 
-The templates will be located in `_dist/emails/`
-
-
 ### To clean the _dist folder
 
 `npm run clean`
@@ -26,12 +23,48 @@ The templates will be located in `_dist/emails/`
 
 `npm run serve`
 
-If you are copy-pasting the markup from the browser using `npm run serve`, please remove the lines related to webserver at the end
+
+## Getting the markup for mailgun
+
+### Inserting Mailgun variables
+If you need to insert one of the mailgun variable to the email, you need to wrap it inside a Nunjucks raw tag:
+
+`{% raw %}{{ Mailgun Variable }}{% endraw %}`
+
+### Setting up the assets path
+If you want the assets path from the CDN:
+* Upload the assets to the CDN
+* Fetch the URL for each asset (banner and DLR logo)
+* Open the file located in `_src/html/templates/partials/email-header.html`
+* Make sure that the variable `assetsPath` on line 1 is set to "cdn"
+* Check and amend accordingly the CDN URL on line 8 for the banner and line 13 for the logo
+* Build the project with `npm run build`
+
+If you want the assets path from the `email-assets folder`:
+* Open the file located in `_src/html/templates/partials/email-header.html`
+* Make sure that the variable `assetsPath` on line 1 is set to "relative"
+* Build the project with `npm run build`
+
+**Do not use for production**
+If you want the assets path from the Github repo:
+* Open the file located in `_src/html/templates/partials/email-header.html`
+* Make sure that the variable `assetsPath` on line 1 is set to "github"
+* Build the project with `npm run build`
+
+### Getting the markup from the `_dist_` folder
+After building the project, the templates will be located in `_dist/emails/`.
+You can use these files as references to use in Mailgun
+
+### Getting the markup from the browser
+When viewing the templates in the browser, you can copy paste the markup using the "view Source" option.
+
+Please remove the lines related to webserver at the end
 
 ```
 <!-- injected by web-dev-server -->
 <script type="module" src="/__web-dev-server__web-socket.js"></script>
 ```
+
 
 ## Adding an e-mail
 
@@ -60,10 +93,6 @@ Here is a short boilerplate:
   </tr>
 </table>
 ```
-
-If you need to insert one of the mailgun variable to the email, you need to wrap it inside a Nunjucks raw tag:
-
-`{% raw %}{{ Mailgun Variable }}{% endraw %}`
 
 ### Create a file for each brand of the email
 
