@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1 user-scalable=yes">
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no">
     <meta name="x-apple-disable-message-reformatting">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
 
     <title>{% block title %}{% endblock %}</title>
 
@@ -19,9 +21,23 @@
     <![endif]-->
 
   <style type="text/css">
+    :root {
+      color-scheme: light dark;
+      supported-color-schemes: light dark;
+    }
+    
     html,
     body {
       background-color: #F2F2F2;
+    }
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
     }
 
     @media only screen and (max-width: 480px) {
