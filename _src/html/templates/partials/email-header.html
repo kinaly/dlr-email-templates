@@ -1,15 +1,43 @@
+{% set assetsPath = "relative" %}
+
+{% set assetsURL =
+  {
+    "banner": {
+      "relative": "../email-assets/email-banner.jpg",
+      "github": "https://raw.githubusercontent.com/kinaly/dlr-email-templates/main/_src/email-assets/email-banner.jpg",
+      "cdn": ""
+    },
+    "dlrLogo": {
+      "relative": "../email-assets/DLR-logo.svg",
+      "github": "https://raw.githubusercontent.com/kinaly/dlr-email-templates/main/_src/email-assets/DLR-logo.svg",
+      "cdn": ""
+    }
+  }
+%}
+
+{% if assetsPath == "relative" %}
+  {% set bannerPath = assetsURL.banner.relative %}
+  {% set dlrLogoPath = assetsURL.dlrLogo.relative %}
+{% elif assetsPath == "github" %}
+  {% set bannerPath = assetsURL.banner.github %}
+  {% set dlrLogoPath = assetsURL.dlrLogo.github %}
+{% elif assetsPath == "cdn" %}
+  {% set bannerPath = assetsURL.banner.cdn %}
+  {% set dlrLogoPath = assetsURL.dlrLogo.cdn %}
+{% endif %}
+
 <table class="container" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
   <tr>
-    <td style="background: url(../email-assets/email-banner.jpg) #092241; background-size: 100%; background-position:center; background-repeat: no-repeat; color: #fff;">
+    <td style="background: url({{ bannerPath }}) #092241; background-size: 100%; background-position:center; background-repeat: no-repeat; color: #fff;">
       <!--[if gte mso 9]>
         <v:rect xmlns_v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px; background-color:#B5CFE3;">
-          <v:fill type="frame" src="../email-assets/email-banner.jpg" />
+          <v:fill type="frame" src="{{ bannerPath }}" />
           <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
       <![endif]-->
       <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td>
-              <img src="../email-assets/DLR-logo.svg" alt="Digital Realty" style="width: 33%; min-width: 113px; max-width: 149px; height: auto; padding: 8px 8px 0;">
+              <img src="{{ dlrLogoPath }}" alt="Digital Realty" style="width: 33%; min-width: 113px; max-width: 149px; height: auto; padding: 8px 8px 0;">
             </td>
           </tr>
           <tr>
