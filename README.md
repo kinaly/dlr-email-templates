@@ -135,6 +135,19 @@ The array shoud look something like this:
 
 `{% set emails = ["new-user", "refresh-registration-link", "successful-registration", "password-reset", "password-reset-confirmation", "password-expiry-reminder", "password-expired", "magic-link", "one-time-code"] %}`
 
+## Email clients compatibility and known issues
+
+These templates have been tested in:
+* Outlook webmail in Firefox 103.0.2 - macOS 12.4
+* Outlook webmail in Edge 103.0.1264.62 - Windows 10
+* Outlook app - Windows 10
+* Apple Mail - iOS 15.5
+* Gmail webmail in Firefox 103.0.3 - macOS 12.4
+* Gmail app - iOS 15.5 (Works well in Light Mode but not in Dark Mode)
+
+The Gmail app in iOS (and possibly Android) will automatically change the colours in Dark Mode for you. These colours cannot be customised and make the text placed over the banner unreadable. If images are not downloaded, the logo will only be barely visible as it is white over a light background.
+
+
 ## Possible Improvements
 
 * Each "component" of the email in the reference could be set as a Nunjucks macro to avoid copy-pasting.
