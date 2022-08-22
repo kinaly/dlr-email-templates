@@ -1,20 +1,70 @@
 <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: #fff; color: #0C223F; line-height: 1.4;">
   <tr>
     <td>
-      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Welcome to {% raw %}{{ Portal Name }}{% endraw %}!</h2>
-            
-      <p style="margin: 0 0 .5em;">We have issued a new link so you can complete your registration.</p>
+      {% raw %}{{#if french}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Bienvenue dans {% raw %}{{ portalName }}{% endraw %} !</h2>
+      
+      <p style="margin: 0 0 .5em;">Voici un nouveau lien pour vous permettre de finaliser votre inscription.</p>
       
       <p style="margin: 2em 0; text-align: center;">
-        <a href="{% raw %}{{ registration link }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Complete Registration</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
+        <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Finaliser Inscription</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
         </a>
       </p>
       
-      <p style="margin: 0 0 .5em;">We hope your experience with our {% raw %}{{ Portal Name }}{% endraw %} is great!</p>
-      <p style="margin: 0 0 .5em;">If you, however, encounter any issues please reach out to us and we will be happy to assist!</p>
+      <p style="margin: 0 0 .5em;">Nous espérons que votre expérience avec {% raw %}{{ portalName }}{% endraw %} sera positive !</p>
+      <p style="margin: 0 0 .5em;">Si vous deviez néanmoins rencontrer des problèmes, contactez-nous et nous nous ferons un plaisir de vous aider !</p>
+      
+      <p style="margin: 1em 0 0;">Merci !</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">L’équipe Digital Realty</strong></p>
 
+      {% raw %}{{else if german}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Willkommen bei {% raw %}{{ portalName }}{% endraw %} !</h2>
+      
+      <p style="margin: 0 0 .5em;">Wir haben einen neuen Link herausgegeben, damit Sie Ihre Registrierung abschließen können.</p>
+      
+      <p style="margin: 2em 0; text-align: center;">
+        <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Ihre Registrierung Abschließen</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
+        </a>
+      </p>
+      
+      <p style="margin: 0 0 .5em;">Wir hoffen, dass Sie eine tolle Erfahrung mit {% raw %}{{ portalName }}{% endraw %} machen!</p>
+      <p style="margin: 0 0 .5em;">Bei Problemen können Sie sich jederzeit an uns wenden – wir helfen Ihnen gerne weiter!</p>
+      
+      <p style="margin: 1em 0 0;">Vielen Dank!</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">Ihr Digital Realty Team</strong></p>
+
+      {% raw %}{{else if spanish}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Bienvenido/a a {% raw %}{{ portalName }}{% endraw %}!</h2>
+      
+      <p style="margin: 0 0 .5em;">Hemos emitido un nuevo enlace para que pueda completar su registro.</p>
+      
+      <p style="margin: 2em 0; text-align: center;">
+        <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Completar Su Registro</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
+        </a>
+      </p>
+      
+      <p style="margin: 0 0 .5em;">Esperamos que tenga una excelente experiencia con nuestro {% raw %}{{ portalName }}{% endraw %}.</p>
+      <p style="margin: 0 0 .5em;">Sin embargo, si tiene algún problema, póngase en contacto con nosotros y estaremos encantados de ayudarle.</p>
+      
+      <p style="margin: 1em 0 0;">Gracias.</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">Su equipo de Digital Realty</strong></p>
+
+      {% raw %}{{else}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Welcome to {% raw %}{{ portalName }}{% endraw %}!</h2>
+      
+      <p style="margin: 0 0 .5em;">We have issued a new link so you can complete your registration.</p>
+      
+      <p style="margin: 2em 0; text-align: center;">
+        <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:30pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Complete Registration</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
+        </a>
+      </p>
+      
+      <p style="margin: 0 0 .5em;">We hope your experience with our {% raw %}{{ portalName }}{% endraw %} is great!</p>
+      <p style="margin: 0 0 .5em;">If you, however, encounter any issues please reach out to us and we will be happy to assist!</p>
+      
       <p style="margin: 1em 0 0;">Thank you!</p>
       <p style="margin: 0;"><strong style="font-weight: bold;">Your Digital Realty Team</strong></p>
+      {% raw %}{{/if}}{% endraw %}
     </td>
   </tr>
 </table>
