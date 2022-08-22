@@ -1,8 +1,63 @@
 <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: #fff; color: #0C223F; line-height: 1.4;">
   <tr>
     <td>
+      {% raw %}{{#if french}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Bienvenue dans {% raw %}{{ portalName }}{% endraw %}!</h2>
+    
+      <p style="margin: 0 0 .5em;">Il ne vous reste plus qu’une étape pour pouvoir vous connecter à notre portail.</p>
+      <p style="margin: 0 0 .5em;">Veuillez cliquer sur le lien ci-dessous pour finaliser votre inscription.</p>
+      
+      <p style="margin: 2em 0; text-align: center;">
+        <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:20pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Finaliser Inscription</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
+        </a>
+      </p>
+      
+      <p style="margin: 0 0 1em;">Nous savons que le quotidien prend parfois le dessus, ne laissant que peu de temps pour consulter tous les e-mails reçus. N’hésitez donc pas à nous contacter pour obtenir un nouveau lien si celui-ci a expiré.</p>
+      
+      <p style="margin: 0 0 .5em;">Nous espérons que votre expérience avec {% raw %}{{ portalName }}{% endraw %} sera positive !</p>
+      
+      <p style="margin: 1em 0 0;">Merci !</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">L’équipe Digital Realty</strong></p>
+      
+      {% raw %}{{else if german}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Willkommen bei {% raw %}{{ portalName }}{% endraw %}!</h2>
+      
+      <p style="margin: 0 0 .5em;">Sie sind jetzt nur noch einen Schritt davon entfernt, sich bei unserem Portal anzumelden.</p>
+      <p style="margin: 0 0 .5em;">Bitte klicken Sie auf den folgenden Link, um Ihre Registrierung abzuschließen.</p>
+      
+      <p style="margin: 2em 0; text-align: center;">
+        <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:20pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Ihre Registrierung Abzuschließen</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
+        </a>
+      </p>
+      
+      <p style="margin: 0 0 1em;">Wir wissen, wie hektisch der Alltag sein kann und wie schnell man die Übersicht über seine E-Mails verliert – wenden Sie sich bitte an uns, um einen neuen Link zu erhalten, wenn dieser bereits abgelaufen ist.</p>
+      
+      <p style="margin: 0 0 .5em;">Wir hoffen, dass Sie eine tolle Erfahrung mit {% raw %}{{ portalName }}{% endraw %} machen!</p>
+      
+      <p style="margin: 1em 0 0;">Vielen Dank!</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">Ihr Digital Realty Team</strong></p>
+      
+      {% raw %}{{else if spanish}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Bienvenido/a a {% raw %}{{ portalName }}{% endraw %}!</h2>
+      
+      <p style="margin: 0 0 .5em;">Está a un paso de acceder a nuestro Portal.</p>
+      <p style="margin: 0 0 .5em;">Haga clic en el siguiente enlace para completar su registro.</p>
+      
+      <p style="margin: 2em 0; text-align: center;">
+        <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:20pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Completar Su Registro</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
+        </a>
+      </p>
+      
+      <p style="margin: 0 0 1em;">Sabemos que a veces algo puede fallar y los e-mails se pierden. En ese caso, póngase en contacto con nosotros para obtener un nuevo enlace si este ya ha caducado.</p>
+      
+      <p style="margin: 0 0 .5em;">Esperamos que tenga una excelente experiencia con nuestro {% raw %}{{ portalName }}{% endraw %}.</p>
+      
+      <p style="margin: 1em 0 0;">Gracias.</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">Su equipo de Digital Realty</strong></p>
+      
+      {% raw %}{{else}}{% endraw %}
       <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Welcome to {% raw %}{{ portalName }}{% endraw %}!</h2>
-            
+      
       <p style="margin: 0 0 .5em;">You are one step away from logging to our Portal now.</p>
       <p style="margin: 0 0 .5em;">Please, click on the link below to complete your registration.</p>
       
@@ -10,13 +65,14 @@
         <a href="{% raw %}{{ url }}{% endraw %}" style="background: #115BD8; text-decoration: none; text-transform: uppercase; letter-spacing: .05em; padding: 8px 20px; color: #fff; display: inline-block; mso-padding-alt:0;text-underline-color:#333;"><!--[if mso]><i style="letter-spacing: 20px;mso-font-width:-100%;mso-text-raise:20pt" hidden>&nbsp;</i><![endif]--><strong style="mso-text-raise:10pt; color: #fff; font-weight: normal;">Complete Registration</strong><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%" hidden>&nbsp;</i><![endif]-->
         </a>
       </p>
-
+      
       <p style="margin: 0 0 1em;">We know sometimes life gets in the way and emails fall through the cracks so please, reach out to us for a new link if this one has already expired.</p>
       
       <p style="margin: 0 0 .5em;">We hope your experience with our {% raw %}{{ portalName }}{% endraw %} is great!</p>
-
+      
       <p style="margin: 1em 0 0;">Thank you!</p>
       <p style="margin: 0;"><strong style="font-weight: bold;">Your Digital Realty Team</strong></p>
+      {% raw %}{{/if}}{% endraw %}
     </td>
   </tr>
 </table>

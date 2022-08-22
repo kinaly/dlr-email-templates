@@ -1,8 +1,16 @@
 {% extends "templates/template-main-email.html" %}
 
-{% block title %} Digital Realty Portal Registration Pending for {% raw %}{{ UserName }}{% endraw %} {% endblock %}
-
-{% block shortSubject %}Registration{% endblock %}
+{% block shortSubject %}
+{% raw %}{{#if french}}{% endraw %}
+Inscription
+{% raw %}{{else if german}}{% endraw %}
+Portalregistrierung
+{% raw %}{{else if spanish}}{% endraw %}
+Registro
+{% raw %}{{else}}{% endraw %}
+Registration
+{% raw %}{{/if}}{% endraw %}
+{% endblock %}
 
 {% block content %}
   {% include "templates/emails/new-user.html" %}
