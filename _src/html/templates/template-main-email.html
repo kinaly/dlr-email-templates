@@ -55,7 +55,7 @@
   <body style="padding: 0; margin: 0; overflow-x: hidden; background-color: #F2F2F2;">
     <div style="background-color: #F2F2F2; min-height: 100%;">
       
-      <table role="article" aria-roledescription="email" aria-label="email name" lang="en" dir="ltr" style="font-family: Arial, Helvetica, sans-serif; font-size: small; max-width:600px; margin:0 auto;">
+      <table role="article" aria-roledescription="email" aria-label="email name" {% raw %}{{#if french}}{% endraw %}lang="fr"{% raw %}{{else if german}}{% endraw %}lang="de"{% raw %}{{else if spanish}}{% endraw %}lang="es"{% raw %}{{else}}{% endraw %}lang="en"{% raw %}{{/if}}{% endraw %} dir="ltr" style="font-family: Arial, Helvetica, sans-serif; font-size: small; max-width:600px; margin:0 auto;">
         <tr>
           <td>
             {% set subject %}
