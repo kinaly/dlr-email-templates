@@ -68,7 +68,7 @@ Please remove the lines related to webserver at the end
 
 ## Adding an e-mail
 
-### Add the body content of the mail
+### 1. Add the body content of the mail
 When adding an e-mail, create a new file inside `_src/html/templates/emails`.
 
 The file should be named after what it does (ie. password-reset.html for the Password Reset email).
@@ -94,7 +94,7 @@ Here is a short boilerplate:
 </table>
 ```
 
-### Create a file for each brand of the email
+### 2. Create a file for each brand of the email
 
 Then you need to create a file for each brand of the email in `_src/html/pages/emails`.
 
@@ -125,15 +125,94 @@ Digital Realty version
 
 `{% include "templates/partials/email-footer-dlr.html" %}`
 
-### Add the newly created email to the list in index.html
+### 3. Add the newly created email to the list in index.html
 
-Add the name (without the extension) of the mail template file to the array in index.html (line 1).
+Add a new object to the variable called `emails` in index.html (line 1).
 
-The name should be the same as the file created in the templates emails folder.
+The object should look like this:
+```
+{
+  "fileName": "new-mail-filename",
+  "mailgunTemplateName": "theTemplateNameInMailgun",
+  "mailgunTemplateURL": {
+    "sandbox": "< the URL of the template in the sandbox >"
+  } 
+}
+```
 
-The array shoud look something like this:
+The array in the variable shoud look something like this:
 
-`{% set emails = ["new-user", "refresh-registration-link", "successful-registration", "password-reset", "password-reset-confirmation", "password-expiry-reminder", "password-expired", "magic-link", "one-time-code"] %}`
+```
+{% set emails = [
+  {
+    "fileName": "new-user",
+    "mailgunTemplateName": "registeremailconfirmation",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/registeremailconfirmation/digitalrealty"
+    } 
+  },
+  {
+    "fileName": "refresh-registration-link",
+    "mailgunTemplateName": "newuserregistrationpending",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/newuserregistrationpending/initial"
+    }
+  },
+  {
+    "fileName": "successful-registration",
+    "mailgunTemplateName": "registrationsuccessful",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/registrationsuccessful/initial"
+    }
+  },
+  {
+    "fileName": "password-reset",
+    "mailgunTemplateName": "forgotpasswordrequest",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/forgotpasswordrequest/digitalrealty"
+    }
+  },
+  {
+    "fileName": "password-reset-confirmation",
+    "mailgunTemplateName": "passwordresetconfirmation",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordresetconfirmation/initial"
+    }
+  },
+  {
+    "fileName": "password-expiry-reminder",
+    "mailgunTemplateName": "passwordexpiringreminder",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordexpiringreminder/initial"
+    }
+  },
+  {
+    "fileName": "password-expired",
+    "mailgunTemplateName": "passwordhasexpired",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordhasexpired/initial"
+    }
+  },
+  {
+    "fileName": "magic-link",
+    "mailgunTemplateName": "passwordlesslogin",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordlesslogin/digitalrealty"
+    }
+  },
+  {
+    "fileName": "one-time-code",
+    "mailgunTemplateName": "onetimecode",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/onetimecode/initial"
+    }
+  }
+] %}
+```
+
+### 4. Get the markup
+Pick the markup of the email by running `npm run build`.
+You can either get the markup via the browser, or in the `_dist/emails` folder.
 
 ## Email clients compatibility and known issues
 

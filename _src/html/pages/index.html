@@ -1,4 +1,68 @@
-{% set emails = ["new-user", "refresh-registration-link", "successful-registration", "password-reset", "password-reset-confirmation", "password-expiry-reminder", "password-expired", "magic-link", "one-time-code"] %}
+{% set emails = [
+  {
+    "fileName": "new-user",
+    "mailgunTemplateName": "registeremailconfirmation",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/registeremailconfirmation/digitalrealty"
+    } 
+  },
+  {
+    "fileName": "refresh-registration-link",
+    "mailgunTemplateName": "newuserregistrationpending",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/newuserregistrationpending/initial"
+    }
+  },
+  {
+    "fileName": "successful-registration",
+    "mailgunTemplateName": "registrationsuccessful",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/registrationsuccessful/initial"
+    }
+  },
+  {
+    "fileName": "password-reset",
+    "mailgunTemplateName": "forgotpasswordrequest",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/forgotpasswordrequest/digitalrealty"
+    }
+  },
+  {
+    "fileName": "password-reset-confirmation",
+    "mailgunTemplateName": "passwordresetconfirmation",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordresetconfirmation/initial"
+    }
+  },
+  {
+    "fileName": "password-expiry-reminder",
+    "mailgunTemplateName": "passwordexpiringreminder",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordexpiringreminder/initial"
+    }
+  },
+  {
+    "fileName": "password-expired",
+    "mailgunTemplateName": "passwordhasexpired",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordhasexpired/initial"
+    }
+  },
+  {
+    "fileName": "magic-link",
+    "mailgunTemplateName": "passwordlesslogin",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/passwordlesslogin/digitalrealty"
+    }
+  },
+  {
+    "fileName": "one-time-code",
+    "mailgunTemplateName": "onetimecode",
+    "mailgunTemplateURL": {
+      "sandbox": "https://app.mailgun.com/app/sending/domains/sandbox4a966d7e6ce040fcbc99bc74c56f448d.mailgun.org/templates/edit/onetimecode/initial"
+    }
+  }
+] %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,19 +83,31 @@
         </ul>
 
         <section>
-          <h2>Interxion version</h2>
-          <ul>
+          <h2>Emails</h2>
+          <ul class="emails">
             {% for email in emails %}
-            <li><a href="emails/{{ email }}-interxion.html">{{ email | replace("-", " ") | title }} (en)</a></li>
-            {% endfor %}
-          </ul>
-        </section>
+            <li class="email">
+              <table>
+                <tr>
+                  <th scope="row"><h3 class="email__title">{{ email.fileName | replace("-", " ") | title }}</h3></th>
+                  <td style="width: 11em;"><a href="emails/{{ email.fileName }}-interxion.html">Interxion Preview</a></td>
+                  <td style="width: 11em;"><a href="emails/{{ email.fileName }}-dlr.html">Digital Realty Preview</a></td>
+                </tr>
+              </table>
 
-        <section>
-          <h2>Digital Realty version</h2>
-          <ul>
-            {% for email in emails %}
-            <li><a href="emails/{{ email }}-dlr.html">{{ email | replace("-", " ") | title }} (en)</a></li>
+              <table>
+                <thead>
+                  <th class="email__label">Mailgun Template Name</th>
+                  <th style="width: 6em;">&nbsp;</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{ email.mailgunTemplateName }}</th>
+                    <td><a href="{{ email.mailgunTemplateURL.sandbox }}">Sandbox</a></td>
+                  </tr>
+                </tbody>
+                </table>
+            </li>
             {% endfor %}
           </ul>
         </section>

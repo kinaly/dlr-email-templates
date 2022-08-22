@@ -2,6 +2,8 @@
 html {
     box-sizing: border-box;
     line-height: 1.4;
+
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -15,4 +17,67 @@ main {
     max-width: 680px;
 
     margin: 1em auto;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+tr {
+    border: 1px solid lightgrey;
+    border-width: 1px 0;
+}
+
+th[scope = "row"] {
+    text-align: left;
+    padding: .5em 0;
+}
+
+td {
+    text-align: center;
+}
+
+
+
+
+
+.emails {
+    padding: 0;
+    list-style-type: none;
+}
+
+.email {
+    display: block;
+    margin: 0 0 2em;
+}
+
+.email:last-child {
+    margin-bottom: 0;
+}
+
+.email__title {
+    margin: 0;
+}
+
+.email__label {
+    font-size: .875em;
+    font-weight: normal;
+    margin: 0;
+    padding: 1em 0 .5em;
+}
+
+
+.email__preview-links {
+    display: flex;
+
+    padding: 0;
+    margin: 0 0 2em;
+    list-style-type: none;
+}
+
+.email__preview-links > * {
+    flex: 1 0 6em;
+    text-align: center;
 }
