@@ -1,18 +1,55 @@
 <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: #fff; color: #0C223F; line-height: 1.4;">
   <tr>
     <td>
-      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Dear Valued Customer,</h2>
+      {% raw %}{{#if french}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Cher client,</h2>
             
-      <p style="margin: 0 0 .5em;">Please, use this one-time code to log into the {% raw %}{{ Portal Name }}{% endraw %}:</p>
+      <p style="margin: 0 0 .5em;">Veuillez utiliser ce code à usage unique pour vous connecter à {% raw %}{{ portalName }}{% endraw %}</p>
       
       <p style="text-align: center;">
-        <code style="display: inline-block; background-color: #e3e3e3; padding: 0 1em; line-height: 2.4; letter-spacing: .25em; font-size: 1.75em;">{% raw %}{{ OTP Code }}{% endraw %}</code>
+        <code style="display: inline-block; background-color: #e3e3e3; padding: 0 1em; line-height: 2.4; letter-spacing: .25em; font-size: 1.75em;">{% raw %}{{ code }}{% endraw %}</code>
       </p>
 
-      <p style="margin: 0 0 1em;">If you did not request this one-time-code, please contact us immediately.</p>
+      <p style="margin: 1em 0 0;">Merci!</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">L’équipe Digital Realty</strong></p>
+      {% raw %}{{else if german}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Sehr geehrter Kunde,</h2>
+            
+      <p style="margin: 0 0 .5em;">bitte verwenden Sie diesen einmaligen Code, um sich bei {% raw %}{{ portalName }}{% endraw %} anzumelden</p>
+      
+      <p style="text-align: center;">
+        <code style="display: inline-block; background-color: #e3e3e3; padding: 0 1em; line-height: 2.4; letter-spacing: .25em; font-size: 1.75em;">{% raw %}{{ code }}{% endraw %}</code>
+      </p>
 
+      <p style="margin: 1em 0 0;">Vielen Dank!</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">Ihr Digital Realty Team</strong></p>
+
+      {% raw %}{{else if spanish}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Estimado/a cliente,</h2>
+            
+      <p style="margin: 0 0 .5em;">Utilice este código de un solo uso para iniciar sesión en {% raw %}{{ portalName }}{% endraw %}:</p>
+      
+      <p style="text-align: center;">
+        <code style="display: inline-block; background-color: #e3e3e3; padding: 0 1em; line-height: 2.4; letter-spacing: .25em; font-size: 1.75em;">{% raw %}{{ code }}{% endraw %}</code>
+      </p>
+
+      <p style="margin: 1em 0 0;">Gracias!</p>
+      <p style="margin: 0;"><strong style="font-weight: bold;">Su equipo de Digital Realty</strong></p>
+
+      {% raw %}{{else}}{% endraw %}
+      <h2 style="font-size: 1.25em; margin: .25em 0 .25em;">Dear Valued Customer,</h2>
+      
+      <p style="margin: 0 0 .5em;">Please, use this one-time code to log into the {% raw %}{{ portalName }}{% endraw %}:</p>
+      
+      <p style="text-align: center;">
+        <code style="display: inline-block; background-color: #e3e3e3; padding: 0 1em; line-height: 2.4; letter-spacing: .25em; font-size: 1.75em;">{% raw %}{{ code }}{% endraw %}</code>
+      </p>
+      
+      <p style="margin: 0 0 1em;">If you did not request this one-time-code, please contact us immediately.</p>
+      
       <p style="margin: 1em 0 0;">Thank you!</p>
       <p style="margin: 0;"><strong style="font-weight: bold;">Your Digital Realty Team</strong></p>
+      {% raw %}{{/if}}{% endraw %}
     </td>
   </tr>
 </table>

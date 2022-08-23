@@ -1,8 +1,16 @@
 {% extends "templates/template-main-email.html" %}
 
-{% block title %} Digital Realty Portal one-time MFA code {% endblock %}
-
-{% block shortSubject %}One-Time Code{% endblock %}
+{% block shortSubject %}
+{% raw %}{{#if french}}{% endraw %}
+Code à usage unique
+{% raw %}{{else if german}}{% endraw %}
+einmaliger Code
+{% raw %}{{else if spanish}}{% endraw %}
+Código de un solo uso
+{% raw %}{{else}}{% endraw %}
+One-Time Code
+{% raw %}{{/if}}{% endraw %}
+{% endblock %}
 
 {% block content %}
   {% include "templates/emails/one-time-code.html" %}
